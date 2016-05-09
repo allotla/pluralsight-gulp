@@ -2,11 +2,11 @@ module.exports = function() {
   var client = './src/client/';
   var temp = './tmp/';
   var clientApp = client + 'app/';
+  var server = './src/server/';
 
   var config = {
-    temp: temp,
-
     /* File paths */
+    /**************/
     alljs: [
       './src/**/*.js',
       './*.js'
@@ -15,16 +15,26 @@ module.exports = function() {
     css: temp + 'styles.css',
     index: client + 'index.html',
     client: client,
+    server: server,
+    temp: temp,
     js: [
       clientApp + '**/*.module.js',
       clientApp + '**/*.js',
       '!' + clientApp + '**/*.spec.js'  // do not take spec.js files
     ],
+
+    /* Bower locations */
+    /***************************/
     bower: {
       json: require('./bower.json'),
       directory: './bower_components/',
       ignorePath: '../..'
-    }
+    },
+
+    /* Node configuration */
+    /**********************/
+    defaultPort: 7203,
+    nodeServer: server + 'app.js'
   };
 
   config.getWiredepDefaultOptions = function() {
