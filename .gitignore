@@ -63,6 +63,7 @@ journal
 # *.sdf
 *.mdf
 *.ldf
+*.swp
 
 # OS generated files #
 ######################
@@ -71,3 +72,7 @@ ehthumbs.db
 Icon?
 Thumbs.db
 
+# Personal files #
+##################
+eslintrules
+tmp
